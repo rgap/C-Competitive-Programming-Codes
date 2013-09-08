@@ -1,0 +1,21 @@
+
+
+// it works when mod is a prime number, the formula is  (b / a) % mod == (b * (a ^ (mod - 2))) % mod;
+// this holds because the fermat theorem.
+
+/////////////////Modular Inverse ////////////
+
+const int64 MOD = 1000000007;
+
+int64 bigPow(int64 a, int64 b){
+	int64 resp = 1;
+	while(b){
+		if(b & 1) resp = (resp * a) % MOD;
+		a = (a * a) % mod;
+		b >>= 1;
+	}
+	return resp % mod;
+}
+int64 inv(int64 x){
+	return bigPow(x, mod - 2);
+}
