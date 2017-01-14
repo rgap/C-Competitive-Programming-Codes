@@ -41,7 +41,8 @@ int s=(1/2.0)*n*(1+n*n);//suma ctte
 
 typedef vector<int> tvi;
 #define ABS(x) ((x<0)?(-(x)):(x))
-//freopen("1.txt","r",stdin);
+//freopen("input.txt", "r", stdin);
+//freopen("output.txt", "w", stdout);
 
 //referencia
 void f(int&x)
@@ -90,13 +91,13 @@ ULONG_MAX
 
 ////////////////////////////////////
 
-string s;//tamaño n
+string s;//tamaÃ±o n
 //s se repite repeticiones veces
 //pos=[0..n*repeticiones-1]
 s[pos % n]//posicion en s con limite de n
 
 
-forn(i,sz){//Para cad de tamaño sz, toma 2 adyacentes de cada elemento
+forn(i,sz){//Para cad de tamaÃ±o sz, toma 2 adyacentes de cada elemento
 	if(cad[(i-1+sz)%sz]=='1')c++; //para i=0, elementos 1 y sz-1
 	if(cad[i]=='1')c++; //posicion de 0 a sz-1
 	if(cad[(i+1)%sz]=='1')c++; 
@@ -180,7 +181,7 @@ bool check(string a, string b){//"b" es subseq de "a".
     return j==b.size();
 }
 
-unsigned int bitsize(const unsigned int& n){//tamaño de n en binario
+unsigned int bitsize(const unsigned int& n){//tamaÃ±o de n en binario
   if(n){
     unsigned int tn=n,numb = 0;
     while(tn){
@@ -351,7 +352,7 @@ void check_subsets(int i, int acum){
     check_subsets(i+1,acum+item[i]);
 }
 
-int bitcount(int n){//numero de 1s de n en binario = subconj de tamaño k
+int bitcount(int n){//numero de 1s de n en binario = subconj de tamaÃ±o k
 	return (n==0)?0:(n&1)+bitcount(n/2);
 }
 
@@ -360,7 +361,7 @@ void check_subsets(vector <int> items){
     int i,j,n=items.size();
     for(i=1;i<(1<<n);++i){
 		//if(bitcount(i)!=k) 
-			//continue;//no es subconj de tamaño k
+			//continue;//no es subconj de tamaÃ±o k
         for(j=0;j<n;++j){
             if(i&(1<<j))
                 cout<<items[j]<<" ";//elementos de subconjunto i
@@ -374,7 +375,7 @@ void check_subsets(vector <int> items){
     int i,j,n=items.size();
     for(i=1;i<(1<<n);++i){
 		//if(bitcount(i)!=k) 
-			//continue;//no es subconj de tamaño k
+			//continue;//no es subconj de tamaÃ±o k
         for(j=n-1;j>=0;--j){
             if(!(i&(1<<j)))
                 cout<<items[n-j-1]<<" ";//elementos de subconjunto i
